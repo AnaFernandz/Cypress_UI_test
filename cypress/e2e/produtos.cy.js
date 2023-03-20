@@ -13,7 +13,7 @@ describe('Funcionalidade pagina de produtos', () => {
             .contains('Aether Gym Pant')
             .click()
     })
-    it.only('Deve adicionar o produto ao carrinho', () => {
+    it('Deve adicionar o produto ao carrinho', () => {
         var quantidade = 3
 
           cy.get('[class= "product-block grid"]')
@@ -25,5 +25,13 @@ describe('Funcionalidade pagina de produtos', () => {
               cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
               cy.get('.woocommerce-message').should('contain', quantidade)
       }); 
+
+it('Deve adicionar produtos ao carrinho - usando comando customizado', () => {
+    cy.addProdutos ('Aero Daily Fitness Tee', 'M', 'Black' , 3 )
+});
+
+it('Deve adicionar produtos ao carrinho - usando comando customizado', () => {
+    cy.addProdutos ('Arcadio Gym Short', '34', 'Red' , 10)
+});
 
 });
