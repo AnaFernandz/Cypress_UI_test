@@ -36,5 +36,20 @@ describe('Funcionalidade endereço - Faturamento e Entrega', () => {
         cy.get('.woocommerce-message').should('contain','Endereço alterado com sucesso.')
         });
 
+        it.only('Deve fazer cadastro de Endereco de Entrega - usando arquivo de dados', () => {
+            EnderecoPage.editarEnderecoEntrega(
+            dadosEndereco[0].nome,
+            dadosEndereco[0].sobrenome,
+            dadosEndereco[2].empresa,
+            dadosEndereco[1].pais,
+            dadosEndereco[1].endereco,
+            dadosEndereco[0].numero,
+            dadosEndereco[1].cidade,
+            dadosEndereco[1].estado,
+            dadosEndereco[1].cep,
+            dadosEndereco[1].telefone,
+            dadosEndereco[1].email
+            )
+        });
 
 });
